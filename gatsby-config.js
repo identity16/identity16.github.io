@@ -3,5 +3,5 @@ module.exports = {
         siteUrl: "https://identity16.github.io",
         title: "identity16",
     },
-    plugins: [],
+    plugins: ["gatsby-plugin-image", "gatsby-plugin-sharp"],
 };

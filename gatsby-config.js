@@ -8,8 +8,6 @@ module.exports = {
         title: "identity16",
     },
     plugins: [
-        "gatsby-plugin-image",
-        "gatsby-plugin-sharp",
         {
             resolve: "gatsby-source-filesystem",
             options: {
@@ -24,7 +22,11 @@ module.exports = {
                 apiURL: process.env.GATSBY_API_URL,
                 queryLimit: 1000, // Defaults to 100
                 collectionTypes: [`articles`, `categories`],
+                path: process.env.GATSBY_API_URL,
             },
         },
+        "gatsby-plugin-image",
+        "gatsby-transformer-sharp",
+        "gatsby-plugin-sharp",
     ],
 };

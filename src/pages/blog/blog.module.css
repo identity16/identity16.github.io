@@ -1,8 +1,16 @@
+.post-list {
+    margin-top: 36px;
+}
+
 .post-item {
     overflow: hidden;
     position: relative;
     margin-top: 32px;
     border-radius: 16px;
+}
+
+.post-item:first-child {
+    margin-top: 0;
 }
 
 .post-item::before {

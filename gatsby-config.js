@@ -12,21 +12,31 @@ module.exports = {
             resolve: "gatsby-source-filesystem",
             options: {
                 name: `blog`,
-                path: `${__dirname}/blog`,
+                path: `${__dirname}/posts`,
             },
         },
-        "gatsby-plugin-mdx",
         {
-            resolve: `gatsby-source-strapi`,
+            resolve: "gatsby-source-filesystem",
             options: {
-                apiURL: process.env.GATSBY_API_URL,
-                queryLimit: 1000, // Defaults to 100
-                collectionTypes: [`articles`, `categories`],
-                path: process.env.GATSBY_API_URL,
+                name: `blog-image`,
+                path: `${__dirname}/images`,
             },
         },
         "gatsby-plugin-image",
-        "gatsby-transformer-sharp",
         "gatsby-plugin-sharp",
+        "gatsby-transformer-sharp",
+        {
+            resolve: "gatsby-transformer-remark",
+            options: {
+                plugins: [
+                    {
+                        resolve: `gatsby-remark-images`,
+                        options: {
+                            maxWidth: 800,
+                        },
+                    },
+                ],
+            },
+        },
     ],
 };

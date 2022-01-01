@@ -1,5 +1,4 @@
 import { graphql, Link } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 import Layout from "../../components/layout";
 import {
@@ -12,29 +11,36 @@ import {
     description,
     date,
 } from "./blog.module.css";
+import Img from "gatsby-image";
 
-function BlogPage({ data }) {
-    console.log(data.allStrapiArticles.nodes[0]);
+function BlogPage({ data: { allMarkdownRemark } }) {
     return (
         <Layout pageTitle="Blog Posts" className={postList}>
-            {data.allStrapiArticles.nodes.map((node) => (
+            {allMarkdownRemark.nodes.map((node) => (
                 <article key={node.id} className={postItem}>
-                    <Link to={`/blog/${node.slug}`}>
-                        <GatsbyImage
-                            className={thumbnail}
-                            image={
-                                node.image.localFile.childImageSharp
-                                    .gatsbyImageData
-                            }
-                            alt={node.image.name}
-                            width={268}
-                            height={180}
-                        />
+                    <Link to={`/blog/${node.id}`}>
+                        {node.frontmatter.featuredImage && (
+                            <Img
+                                className={thumbnail}
+                                fluid={
+                                    node.frontmatter.featuredImage
+                                        .childImageSharp.fluid
+                                }
+                            />
+                        )}
                         <div className={infoContainer}>
-                            <p className={category}>{node.category.name}</p>
-                            <h2 className={title}>{node.title}</h2>
-                            <p className={description}>{node.description}</p>
-                            <p className={date}>Posted: {node.created_at}</p>
+                            {node.frontmatter.category && (
+                                <Link to={null} className={category}>
+                                    {node.frontmatter.category}
+                                </Link>
+                            )}
+                            <h2 className={title}>{node.frontmatter.title}</h2>
+                            {node.frontmatter.description && (
+                                <p className={description}>
+                                    {node.frontmatter.description}
+                                </p>
+                            )}
+                            <p className={date}>{node.frontmatter.date}</p>
                         </div>
                     </Link>
                 </article>
@@ -45,24 +51,20 @@ function BlogPage({ data }) {
 
 export const query = graphql`
     query {
-        allStrapiArticles(sort: { order: DESC, fields: created_at }) {
+        allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
             nodes {
-                description
                 id
-                image {
-                    name
-                    localFile {
+                frontmatter {
+                    title
+                    description
+                    date
+                    featuredImage {
                         childImageSharp {
-                            gatsbyImageData
+                            fluid(maxWidth: 800) {
+                                ...GatsbyImageSharpFluid
+                            }
                         }
                     }
-                }
-                slug
-                title
-                created_at(formatString: "YYYY.MM.DD")
-                category {
-                    name
-                    slug
                 }
             }
         }

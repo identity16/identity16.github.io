@@ -10,7 +10,7 @@ import {
     title,
     description,
     date,
-} from "./blog.module.css";
+} from "./list.module.css";
 import Img from "gatsby-image";
 
 function BlogPage({ data: { allMarkdownRemark } }) {

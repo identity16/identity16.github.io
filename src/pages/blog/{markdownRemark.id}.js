@@ -1,13 +1,37 @@
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import React from "react";
 import Layout from "../../components/layout";
+import {
+    container,
+    titleContainer,
+    title,
+    date,
+    category,
+    featuredImage,
+    content,
+} from "./post.module.css";
+import Img from "gatsby-image";
 
-function BlogPost({ data }) {
+function BlogPost({ data: { markdownRemark: md } }) {
     return (
-        <Layout pageTitle={data.markdownRemark.frontmatter.title}>
-            <p>{data.markdownRemark.frontmatter.date}</p>
+        <Layout pageTitle={md.frontmatter.title} className={container}>
+            <div className={titleContainer}>
+                <Link to={"/"} className={category}>
+                    {md.frontmatter.category}
+                </Link>
+                <h1 className={title}>{md.frontmatter.title}</h1>
+                <p className={date}>{md.frontmatter.date}</p>
+            </div>
+            {md.frontmatter.featuredImage && (
+                <Img
+                    className={featuredImage}
+                    fluid={md.frontmatter.featuredImage.childImageSharp.fluid}
+                />
+            )}
+
             <div
-                dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+                className={content}
+                dangerouslySetInnerHTML={{ __html: md.html }}
             ></div>
         </Layout>
     );
@@ -21,6 +45,7 @@ export const query = graphql`
                 title
                 date
                 description
+                category
                 featuredImage {
                     childImageSharp {
                         fluid(maxWidth: 800) {

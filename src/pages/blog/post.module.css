@@ -10,9 +10,11 @@
 }
 
 .category {
-    font-size: 18px;
+    display: block;
+    margin-bottom: 8px;
     color: #666;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: 700;
     text-decoration: none;
 }
 
@@ -21,14 +23,16 @@
 }
 
 .title {
-    margin: 8px 0 16px;
+    margin: 0 0 16px;
     font-size: 32px;
+    font-weight: 800;
 }
 
 .date {
     margin: 0;
     font-size: 14px;
     color: #666;
+    font-weight: 700;
 }
 
 /* Featured Image */
@@ -45,4 +49,5 @@
 .content {
     width: 732px;
     margin: 48px auto 0;
+    font-size: 18px;
 }

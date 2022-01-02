@@ -4,7 +4,7 @@ import Layout from "../../components/layout";
 import {
     postList,
     postItem,
-    thumbnail,
+    featuredImage,
     infoContainer,
     category,
     title,
@@ -21,7 +21,7 @@ function BlogPage({ data: { allMarkdownRemark } }) {
                     <Link to={`/blog/${node.id}`}>
                         {node.frontmatter.featuredImage && (
                             <Img
-                                className={thumbnail}
+                                className={featuredImage}
                                 fluid={
                                     node.frontmatter.featuredImage
                                         .childImageSharp.fluid
@@ -58,6 +58,7 @@ export const query = graphql`
                     title
                     description
                     date
+                    category
                     featuredImage {
                         childImageSharp {
                             fluid(maxWidth: 800) {

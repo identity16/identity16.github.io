@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-blog-markdown-remark-id-js",
     "path": "/blog/949707f7-1c7b-5fe9-af8c-621913f9c10c/",
-    "result": {"data":{"markdownRemark":{"html":"<p>nice to meet you, WHy?</p>","frontmatter":{"title":"Why, Gatsby and MDX","date":"2021-07-15","description":null,"featuredImage":null}}},"pageContext":{"id":"949707f7-1c7b-5fe9-af8c-621913f9c10c","__params":{"id":"949707f7-1c7b-5fe9-af8c-621913f9c10c"}}},
+    "result": {"data":{"markdownRemark":{"html":"<p>nice to meet you, WHy?</p>","frontmatter":{"title":"Why, Gatsby and MDX","date":"2021-07-15","description":null,"category":null,"featuredImage":null}}},"pageContext":{"id":"949707f7-1c7b-5fe9-af8c-621913f9c10c","__params":{"id":"949707f7-1c7b-5fe9-af8c-621913f9c10c"}}},
     "staticQueryHashes": ["3159585216"]}

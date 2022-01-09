@@ -9,38 +9,36 @@ import {
     category,
     featuredImage,
     content,
-} from "./post.module.css";
+} from "./post.module.scss";
 import Img from "gatsby-image";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
-function BlogPost({ data: { markdownRemark: md } }) {
+function BlogPost({ data: { mdx } }) {
     return (
-        <Layout pageTitle={md.frontmatter.title} className={container}>
+        <Layout pageTitle={mdx.frontmatter.title} className={container}>
             <div className={titleContainer}>
                 <Link to={"/"} className={category}>
-                    {md.frontmatter.category}
+                    {mdx.frontmatter.category}
                 </Link>
-                <h1 className={title}>{md.frontmatter.title}</h1>
-                <p className={date}>{md.frontmatter.date}</p>
+                <h1 className={title}>{mdx.frontmatter.title}</h1>
+                <p className={date}>{mdx.frontmatter.date}</p>
             </div>
-            {md.frontmatter.featuredImage && (
+            {mdx.frontmatter.featuredImage && (
                 <Img
                     className={featuredImage}
-                    fluid={md.frontmatter.featuredImage.childImageSharp.fluid}
+                    fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid}
                 />
             )}
 
-            <div
-                className={content}
-                dangerouslySetInnerHTML={{ __html: md.html }}
-            ></div>
+            <MDXRenderer className={content}>{mdx.body}</MDXRenderer>
         </Layout>
     );
 }
 
 export const query = graphql`
     query ($id: String) {
-        markdownRemark(id: { eq: $id }) {
-            html
+        mdx(id: { eq: $id }) {
+            body
             frontmatter {
                 title
                 date

@@ -13,10 +13,10 @@ import {
 } from "./list.module.css";
 import Img from "gatsby-image";
 
-function BlogPage({ data: { allMarkdownRemark } }) {
+function BlogPage({ data: { allMdx } }) {
     return (
         <Layout pageTitle="Blog Posts" className={postList}>
-            {allMarkdownRemark.nodes.map((node) => (
+            {allMdx.nodes.map((node) => (
                 <article key={node.id} className={postItem}>
                     <Link to={`/blog/${node.id}`}>
                         {node.frontmatter.featuredImage && (
@@ -51,7 +51,7 @@ function BlogPage({ data: { allMarkdownRemark } }) {
 
 export const query = graphql`
     query {
-        allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+        allMdx(sort: { fields: frontmatter___date, order: DESC }) {
             nodes {
                 id
                 frontmatter {

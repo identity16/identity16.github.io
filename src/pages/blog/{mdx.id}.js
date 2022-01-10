@@ -9,7 +9,7 @@ import {
     category,
     featuredImage,
     content,
-} from "./post.module.scss";
+} from "./post.module.css";
 import Img from "gatsby-image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 

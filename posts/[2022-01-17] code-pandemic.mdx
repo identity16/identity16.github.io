@@ -6,7 +6,11 @@ description: "리팩터링 2판 1장을 읽고 코로나 바이러스가 창궐�
 category: "Book"
 book: 9791162242742
 featuredImage: ./images/2022-01-17/refactoring-booster-shot.png
+embeddedImagesLocal:
+    - ./images/2022-01-17/dying-projects.png
 ---
+
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 
 # 혼자 코딩 vs 회사 코딩
 
@@ -34,8 +38,7 @@ featuredImage: ./images/2022-01-17/refactoring-booster-shot.png
 
 그러나 이 방식에는 몇 가지 단점이 있다.
 
-![다 죽어가는 내 프로젝트의 생명선](./images/2022-01-06/dying-projects.png)
-<del>다 죽어가는 내 프로젝트의 생명선..</del>
+<GatsbyImage alt="다 죽어가는 내 프로젝트의 생명선" image={getImage(props.localImages[0])} />
 
 프로젝트가 일회성으로 반짝 개발되고 죽어버린다는 점이다
 

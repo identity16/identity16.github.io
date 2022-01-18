@@ -10,7 +10,7 @@ import {
     featuredImage,
     content,
 } from "./post.module.css";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 function BlogPost({ data: { mdx } }) {
@@ -24,13 +24,21 @@ function BlogPost({ data: { mdx } }) {
                 <p className={date}>{mdx.frontmatter.date}</p>
             </div>
             {mdx.frontmatter.featuredImage && (
-                <Img
+                <GatsbyImage
                     className={featuredImage}
-                    fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid}
+                    image={
+                        mdx.frontmatter.featuredImage.childImageSharp
+                            .gatsbyImageData
+                    }
+                    alt="Featured Image"
                 />
             )}
 
-            <MDXRenderer className={content}>{mdx.body}</MDXRenderer>
+            <div className={content}>
+                <MDXRenderer localImages={mdx.frontmatter.embeddedImagesLocal}>
+                    {mdx.body}
+                </MDXRenderer>
+            </div>
         </Layout>
     );
 }
@@ -46,9 +54,12 @@ export const query = graphql`
                 category
                 featuredImage {
                     childImageSharp {
-                        fluid(maxWidth: 800) {
-                            ...GatsbyImageSharpFluid
-                        }
+                        gatsbyImageData(layout: CONSTRAINED)
+                    }
+                }
+                embeddedImagesLocal {
+                    childImageSharp {
+                        gatsbyImageData(height: 625, layout: CONSTRAINED)
                     }
                 }
             }

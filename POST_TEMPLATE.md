@@ -1,9 +1,14 @@
 ---
-title: "포스팅 제목"
+published: true
+title: ""
 date: "2022-01-01"
-category: "TEST"
-description: "포스팅 내용을 한줄로 간단하게 요약해주세요"
-featuredImage: ./images/djje.jpeg
+description: ""
+category: "Book"
+book: 9791162242742
+project: "Life Gallery"
+featuredImage: ./images/
+embeddedImagesLocal:
+    - ./images/
 ---
 
 여기서부터 추가하면 됩니다!

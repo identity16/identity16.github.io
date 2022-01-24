@@ -30,9 +30,9 @@ function BlogPage({ data: { allMdx } }) {
                         )}
                         <div className={infoContainer}>
                             {node.frontmatter.category && (
-                                <Link to={null} className={category}>
+                                <span to="/" className={category}>
                                     {node.frontmatter.category}
-                                </Link>
+                                </span>
                             )}
                             <h2 className={title}>{node.frontmatter.title}</h2>
                             {node.frontmatter.description && (

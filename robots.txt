@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://identity16.github.io/sitemap/sitemap-index.xml
+Host: https://identity16.github.io

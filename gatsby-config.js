@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
     siteMetadata: {
-        siteUrl: "https://identity16.github.io/blog",
+        siteUrl: "https://identity16.github.io",
         title: "identity16",
     },
     plugins: [
@@ -54,11 +54,11 @@ module.exports = {
                                         date: edge.node.frontmatter.date,
                                         url:
                                             site.siteMetadata.siteUrl +
-                                            "/" +
+                                            "/blog/" +
                                             edge.node.slug,
                                         guid:
                                             site.siteMetadata.siteUrl +
-                                            "/" +
+                                            "/blog/" +
                                             edge.node.slug,
                                     }
                                 );
@@ -82,6 +82,17 @@ module.exports = {
                         `,
                         output: "/rss.xml",
                         title: "identity16's BLOG",
+                    },
+                ],
+            },
+        },
+        {
+            resolve: "gatsby-plugin-robots-txt",
+            options: {
+                policy: [
+                    {
+                        userAgent: "*",
+                        allow: "/",
                     },
                 ],
             },

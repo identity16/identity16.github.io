@@ -8,6 +8,7 @@ import {
     date,
     category,
     featuredImage,
+    featuredImageAttribution,
     content,
 } from "./post.module.css";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -33,6 +34,11 @@ function BlogPost({ data: { mdx } }) {
                     alt="Featured Image"
                 />
             )}
+            {mdx.frontmatter.featuredImageAttribution && (
+                <p className={featuredImageAttribution}>
+                    {mdx.frontmatter.featuredImageAttribution}
+                </p>
+            )}
 
             <div className={content}>
                 <MDXRenderer localImages={mdx.frontmatter.embeddedImagesLocal}>
@@ -57,6 +63,7 @@ export const query = graphql`
                         gatsbyImageData(layout: CONSTRAINED)
                     }
                 }
+                featuredImageAttribution
                 embeddedImagesLocal {
                     childImageSharp {
                         gatsbyImageData(height: 625, layout: CONSTRAINED)

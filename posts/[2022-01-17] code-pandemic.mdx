@@ -8,6 +8,9 @@ book: 9791162242742
 featuredImage: ./images/2022-01-17/refactoring-booster-shot.png
 embeddedImagesLocal:
     - ./images/2022-01-17/dying-projects.png
+    - ./images/2022-01-17/telephone-lines.jpg
+    - ./images/2022-01-17/who-pandemic.jpeg
+    - ./images/2022-01-17/crane-fork.jpg
 ---
 
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
@@ -63,6 +66,8 @@ import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 잘 돌아가던 코드 들쑤시다가
 버그 만드는 사람 밖에 안되기 때문이다.
 
+<GatsbyImage alt="어이 김씨, 꼭 저걸 건드려야 하겠는가.." image={getImage(props.localImages[1])} />
+
 그래서 당신이 어떤 회사에 들어가더라도
 레거시코드에 맞게 코드 스타일을 맞추는 것이
 첫 번째 임무가 될 것이다.
@@ -70,9 +75,9 @@ import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 아마도 그동안 공부한 것들을 마음껏 펼치고자 생각했던
 (나 포함) 신입/인턴 개발자들은 극심한 현타를 맞게 될 것이다.
 
-마치 외계인이 인류를 지배하려는 포부를 가지고 지구에 쳐들어왔는데
-코XX 바이러스 때문에 공격은 무슨
-일단 죽지 않게 케어부터 해야하는 느낌..?
+마치 외계인이 인류를 지배하려고 지구에 쳐들어왔는데
+코로나 바이러스 때문에 비실비실 거리고 있어서
+공격은 커녕 일단 살려놓고 생각해야하는 느낌..?
 
 
 # 팬데믹과 리팩토링
@@ -80,6 +85,8 @@ import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 어느 순간 회사에 다니면서
 어떻게든 레거시 코드를 개선하려고 아등바등하는 내 모습이
 지금 팬데믹 상황을 극복하려는 시대 상황과 겹쳐보였다.
+
+<GatsbyImage alt="프로젝트에 팬데믹을 선포합니다" image={getImage(props.localImages[2])} />
 
 통제할 수 없이 퍼지는 전파력은
 내가 수정하면 어떤 사이드 이펙트가 발생할지 모르는 코드와 같고,
@@ -126,10 +133,12 @@ import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 큰 맥락에서 '코드를 언제든지 쉽게 바꿀 수 있게'라는 메시지를 담고 있다.
 
 DRY(Do not Repeat Yourself) 원칙 같이
-이상적인 원칙을 고수하기 보다는
+이상적인 원칙을 고수하기 보다
 가독성/성능을 해치지 않는 반복 정도는
 변수 선언 수정 없이 코드 덩어리를 그대로 퍼서 옮길 수 있기 때문에
 오히려 더 권장하기도 하는 실용적인 관점을 보여준다.
+
+<GatsbyImage alt="필요할 때 바로 옮길 수 있다는 게 곧 코드의 유연성 아닐까?" image={getImage(props.localImages[3])} />
 
 어떤 변경사항(변이 바이러스)이 몰아쳐도
 대응할 수 있는 구조(항체)를 만드는 과정이

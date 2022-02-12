@@ -11,7 +11,7 @@ import {
     description,
     date,
 } from "./list.module.css";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 function BlogPage({ data: { allMdx } }) {
     return (
@@ -20,12 +20,13 @@ function BlogPage({ data: { allMdx } }) {
                 <article key={node.id} className={postItem}>
                     <Link to={`/blog/${node.id}`}>
                         {node.frontmatter.featuredImage && (
-                            <Img
+                            <GatsbyImage
                                 className={featuredImage}
-                                fluid={
+                                image={
                                     node.frontmatter.featuredImage
-                                        .childImageSharp.fluid
+                                        .childImageSharp.gatsbyImageData
                                 }
+                                alt="Featured Image"
                             />
                         )}
                         <div className={infoContainer}>
@@ -61,9 +62,7 @@ export const query = graphql`
                     category
                     featuredImage {
                         childImageSharp {
-                            fluid(maxWidth: 800) {
-                                ...GatsbyImageSharpFluid
-                            }
+                            gatsbyImageData(layout: CONSTRAINED)
                         }
                     }
                 }

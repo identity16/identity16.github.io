@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
     siteMetadata: {
-        siteUrl: "https://identity16.github.io/blog/",
+        siteUrl: "https://identity16.github.io/blog",
         title: "identity16",
     },
     plugins: [
@@ -25,6 +25,7 @@ module.exports = {
                 gatsbyRemarkPlugins: ["gatsby-remark-line-breaks"],
             },
         },
+        "gatsby-plugin-sitemap",
         {
             resolve: "gatsby-plugin-feed",
             options: {
@@ -54,11 +55,11 @@ module.exports = {
                                         url:
                                             site.siteMetadata.siteUrl +
                                             "/" +
-                                            edge.node.id,
+                                            edge.node.slug,
                                         guid:
                                             site.siteMetadata.siteUrl +
                                             "/" +
-                                            edge.node.id,
+                                            edge.node.slug,
                                     }
                                 );
                             });
@@ -68,7 +69,7 @@ module.exports = {
                             allMdx(sort: { order: DESC, fields: [frontmatter___date] },) {
                                 edges {
                                     node {
-                                        id
+                                        slug
                                         frontmatter {
                                             title
                                             description

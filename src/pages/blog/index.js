@@ -17,8 +17,8 @@ function BlogPage({ data: { allMdx } }) {
     return (
         <Layout pageTitle="Blog Posts" className={postList}>
             {allMdx.nodes.map((node) => (
-                <article key={node.id} className={postItem}>
-                    <Link to={`/blog/${node.id}`}>
+                <article key={node.slug} className={postItem}>
+                    <Link to={`/blog/${node.slug}`}>
                         {node.frontmatter.featuredImage && (
                             <GatsbyImage
                                 className={featuredImage}
@@ -54,7 +54,7 @@ export const query = graphql`
     query {
         allMdx(sort: { fields: frontmatter___date, order: DESC }) {
             nodes {
-                id
+                slug
                 frontmatter {
                     title
                     description

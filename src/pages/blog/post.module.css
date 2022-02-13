@@ -60,40 +60,54 @@
     line-height: 2;
 }
 
-@media (max-width: 768px) {
-    .content {
-        width: 100%;
-    }
-}
-
 .content h1 {
-    margin-top: 2.2em;
+    margin: 1.6em 0 0.8em;
 }
 
 .content h2 {
-    margin-top: 2em;
+    margin: 1.6em 0 0.8em;
 }
 
 .content h3 {
-    margin-top: 1.8em;
+    margin: 1.6em 0 0.8em;
 }
 
 .content h4 {
-    margin-top: 1.6em;
+    margin: 1.6em 0 0.8em;
 }
 
 .content h5 {
-    margin-top: 1.4em;
+    margin: 1.6em 0 0.8em;
 }
 
-.content h6 {
-    margin-top: 1.2em;
-}
-
+.content h6,
 .content p {
     margin: 1.2em 0;
 }
 
 .content li {
     line-height: 2;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 24px 16px 60px;
+    }
+
+    .category {
+        font-size: 14px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .featured-image-attribution {
+        font-size: 10px;
+    }
+
+    .content {
+        width: 100%;
+        font-size: 16px;
+    }
 }

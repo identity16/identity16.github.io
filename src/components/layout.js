@@ -20,8 +20,13 @@ function Layout({ pageTitle, children, className }) {
                 {pageTitle} | {data.site.siteMetadata.title}
             </title>
             <nav className={gnb}>
-                <Link to="/" className={logo}>
-                    <StaticImage src="../images/logo.png" alt="ㅂㄹㄱ" />
+                <Link to="/">
+                    <StaticImage
+                        className={logo}
+                        src="../images/logo.png"
+                        alt="ㅂㄹㄱ"
+                        objectFit="contain"
+                    />
                 </Link>
             </nav>
             <main className={container + " " + className}>{children}</main>

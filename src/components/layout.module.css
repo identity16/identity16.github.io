@@ -24,3 +24,17 @@ body {
 .logo {
     height: 32px;
 }
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px 80px;
+    }
+
+    .gnb {
+        height: 48px;
+    }
+
+    .logo {
+        height: 28px;
+    }
+}

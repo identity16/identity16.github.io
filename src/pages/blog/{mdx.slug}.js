@@ -13,6 +13,7 @@ import {
 } from "./post.module.css";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import Comment from "../../components/comment";
 
 function BlogPost({ data: { mdx } }) {
     return (
@@ -45,6 +46,7 @@ function BlogPost({ data: { mdx } }) {
                     {mdx.body}
                 </MDXRenderer>
             </div>
+            <Comment />
         </Layout>
     );
 }

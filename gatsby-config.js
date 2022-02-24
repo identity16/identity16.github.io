@@ -97,5 +97,19 @@ module.exports = {
                 ],
             },
         },
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                // The property ID; the tracking code won't be generated without it
+                trackingId: "G-KT75JM7BL1",
+                head: false,
+                anonymize: true,
+                respectDNT: true,
+                // Delays sending pageview hits on route update (in milliseconds)
+                pageTransitionDelay: 0,
+                // defaults to false
+                enableWebVitalsTracking: true,
+            },
+        },
     ],
 };

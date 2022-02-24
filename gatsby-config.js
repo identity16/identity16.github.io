@@ -98,17 +98,16 @@ module.exports = {
             },
         },
         {
-            resolve: `gatsby-plugin-google-analytics`,
+            resolve: `gatsby-plugin-google-gtag`,
             options: {
-                // The property ID; the tracking code won't be generated without it
-                trackingId: "G-KT75JM7BL1",
-                head: false,
-                anonymize: true,
-                respectDNT: true,
-                // Delays sending pageview hits on route update (in milliseconds)
-                pageTransitionDelay: 0,
-                // defaults to false
-                enableWebVitalsTracking: true,
+                trackingIds: ["G-KT75JM7BL1"],
+                // This object is used for configuration specific to this plugin
+                pluginConfig: {
+                    // Puts tracking script in the head instead of the body
+                    head: false,
+                    // Setting this parameter is also optional
+                    respectDNT: true,
+                },
             },
         },
     ],

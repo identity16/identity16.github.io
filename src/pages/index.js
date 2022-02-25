@@ -1,12 +1,12 @@
-import { navigate } from "gatsby";
-import { useEffect } from "react";
+import { Link } from "gatsby";
+import React from "react";
 
-// markup
 const IndexPage = () => {
-    useEffect(() => {
-        navigate("/blog/");
-    }, []);
-    return null;
+    return (
+        <div>
+            <Link to={"/blog"}>Go to Blog</Link>
+        </div>
+    );
 };
 
 export default IndexPage;

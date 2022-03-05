@@ -11,6 +11,7 @@ const MyImage = (props) => (
                 margin: "0 auto",
                 borderRadius: 8,
                 boxShadow: "0 0 0.3em 0.1em rgb(0 0 0 / 10%)",
+                isolation: "isolate",
             }}
             {...props}
         />

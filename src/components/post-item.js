@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 import {
@@ -10,11 +10,33 @@ import {
     description,
     date,
 } from "./post-item.module.css";
+import { emojiToImage, findEmoji } from "../utils/emoji";
 
 function PostItem({ node }) {
+    const [titleEmoji, setTitleEmoji] = useState(null);
+
+    useEffect(() => {
+        const emojiArr = findEmoji(node.frontmatter.title);
+
+        if (emojiArr !== null) {
+            setTitleEmoji(emojiArr[0]);
+        }
+    }, [node]);
+
     return (
         <article className={postItem}>
-            <Link to={`/blog/${node.slug}`}>
+            <Link
+                to={`/blog/${node.slug}`}
+                style={
+                    titleEmoji !== null
+                        ? {
+                              cursor: `url("${emojiToImage(
+                                  titleEmoji
+                              )}") 16 0, auto`,
+                          }
+                        : {}
+                }
+            >
                 {node.frontmatter.featuredImage && (
                     <GatsbyImage
                         className={featuredImage}

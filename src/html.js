@@ -15,6 +15,10 @@ export default function HTML(props) {
                     name="google-site-verification"
                     content="Fz8BAsf6U11BJKbwiE6pg7s4xyp6tdDLSNA-RreiDgA"
                 />
+                <meta
+                    name="naver-site-verification"
+                    content="d5811eecb84a1904a51ec259689d8501d50de110"
+                />
                 <link
                     rel="stylesheet"
                     type="text/css"

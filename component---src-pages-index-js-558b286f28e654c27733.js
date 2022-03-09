@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkidentity16_github_io=self.webpackChunkidentity16_github_io||[]).push([[678],{7704:function(t,u,i){i.r(u);var n=i(5444),e=i(7294);u.default=function(){return(0,e.useEffect)((function(){(0,n.c4)("/blog/")}),[]),null}}}]);
-//# sourceMappingURL=component---src-pages-index-js-558b286f28e654c27733.js.map

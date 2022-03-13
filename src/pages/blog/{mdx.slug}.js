@@ -14,10 +14,17 @@ import {
 import { GatsbyImage } from "gatsby-plugin-image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Comment from "../../components/comment";
+import SEO from "../../components/seo";
 
 function BlogPost({ data: { mdx } }) {
     return (
         <Layout pageTitle={mdx.frontmatter.title} className={container}>
+            <SEO
+                title={mdx.frontmatter.title}
+                description={mdx.frontmatter.title}
+                image={mdx.frontmatter.featuredImage.publicURL}
+                article={true}
+            />
             <div className={titleContainer}>
                 <Link to={"/"} className={category}>
                     {mdx.frontmatter.category}
@@ -64,6 +71,7 @@ export const query = graphql`
                     childImageSharp {
                         gatsbyImageData(layout: CONSTRAINED)
                     }
+                    publicURL
                 }
                 featuredImageAttribution
                 embeddedImagesLocal {

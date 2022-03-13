@@ -5686,6 +5686,13 @@
     "globby" "^11.0.4"
     "lodash" "^4.17.21"
 
+"gatsby-plugin-react-helmet@^5.9.0":
+  "integrity" "sha512-TpPxg0Cl+zH34P9rVzKW+o6ejC6fZpvZMZ4Gs/zZ4uFswSJo6hwj/teUjB1rGAytPE+d6w9cZ2IP1gEM2RR9Ig=="
+  "resolved" "https://registry.npmjs.org/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-5.9.0.tgz"
+  "version" "5.9.0"
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+
 "gatsby-plugin-robots-txt@^1.7.0":
   "integrity" "sha512-Y1D8FBeXNtECoCd0g0jIkhKpSvzFzeh2xpt1xTvGluRP6xmqJq7iB3DPEv7xqGlZAcfzaSxw/j5++Y+3WLva8A=="
   "resolved" "https://registry.npmjs.org/gatsby-plugin-robots-txt/-/gatsby-plugin-robots-txt-1.7.0.tgz"
@@ -9858,6 +9865,21 @@
   "resolved" "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.10.tgz"
   "version" "6.0.10"
 
+"react-fast-compare@^3.1.1":
+  "integrity" "sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA=="
+  "resolved" "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.0.tgz"
+  "version" "3.2.0"
+
+"react-helmet@^5.1.3 || ^6.0.0", "react-helmet@^6.1.0":
+  "integrity" "sha512-4uMzEY9nlDlgxr61NL3XbKRy1hEkXmKNXhjbAIOVw5vcFrsdYbH2FEwcNyWvWinl103nXgzYNlns9ca+8kFiWw=="
+  "resolved" "https://registry.npmjs.org/react-helmet/-/react-helmet-6.1.0.tgz"
+  "version" "6.1.0"
+  dependencies:
+    "object-assign" "^4.1.1"
+    "prop-types" "^15.7.2"
+    "react-fast-compare" "^3.1.1"
+    "react-side-effect" "^2.1.0"
+
 "react-is@^16.12.0", "react-is@^16.8.1":
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
@@ -9873,7 +9895,12 @@
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.9.0.tgz"
   "version" "0.9.0"
 
-"react@^16.13.1 || ^17.0.0", "react@^16.9.0 || ^17.0.0", "react@^17.0.1", "react@15.x || 16.x || 17.x", "react@17.0.2":
+"react-side-effect@^2.1.0":
+  "integrity" "sha512-2FoTQzRNTncBVtnzxFOk2mCpcfxQpenBMbk5kSVBg5UcPqV9fRbgY2zhb7GTWWOlpFmAxhClBDlIq8Rsubz1yQ=="
+  "resolved" "https://registry.npmjs.org/react-side-effect/-/react-side-effect-2.1.1.tgz"
+  "version" "2.1.1"
+
+"react@^16.13.1 || ^17.0.0", "react@^16.3.0 || ^17.0.0", "react@^16.9.0 || ^17.0.0", "react@^17.0.1", "react@>=16.3.0", "react@15.x || 16.x || 17.x", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"

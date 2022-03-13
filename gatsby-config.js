@@ -6,6 +6,8 @@ module.exports = {
     siteMetadata: {
         siteUrl: "https://identity16.github.io",
         title: "identity16",
+        description: "Creative Software Developer",
+        image: "/default.jpg",
     },
     plugins: [
         {
@@ -110,5 +112,6 @@ module.exports = {
                 },
             },
         },
+        `gatsby-plugin-react-helmet`,
     ],
 };

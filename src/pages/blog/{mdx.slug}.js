@@ -21,7 +21,7 @@ function BlogPost({ data: { mdx } }) {
         <Layout pageTitle={mdx.frontmatter.title} className={container}>
             <SEO
                 title={mdx.frontmatter.title}
-                description={mdx.frontmatter.title}
+                description={mdx.frontmatter.description}
                 image={mdx.frontmatter.featuredImage.publicURL}
                 article={true}
             />

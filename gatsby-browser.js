@@ -1,6 +1,7 @@
 import React from "react";
 import { MDXProvider } from "@mdx-js/react";
 import { GatsbyImage } from "gatsby-plugin-image";
+import "./src/global.css";
 
 const MyImage = (props) => (
     <figure style={{ margin: "2.5em auto" }}>

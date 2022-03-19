@@ -10,7 +10,7 @@ import {
     description,
     date,
 } from "./post-item.module.css";
-import { emojiToImage, findEmoji } from "../utils/emoji";
+import { textToImage, findEmoji } from "../utils/emoji";
 
 function PostItem({ node }) {
     const [titleEmoji, setTitleEmoji] = useState(null);
@@ -30,7 +30,7 @@ function PostItem({ node }) {
                 style={
                     titleEmoji !== null
                         ? {
-                              cursor: `url("${emojiToImage(
+                              cursor: `url("${textToImage(
                                   titleEmoji
                               )}") 16 0, auto`,
                           }

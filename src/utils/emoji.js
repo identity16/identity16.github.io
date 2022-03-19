@@ -23,7 +23,7 @@ export const textToImage = (text) => {
         "rgba(0,0,0,0.3)"
     )}'>${text}</text>`;
 
-    return `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:28px;'>${elText}</svg>`;
+    return `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:28px;font-family:TossFaceFontMac, sans-serif;'>${elText}</svg>`;
 };
 
 function createShadowFilter(offset = 1, color = "black") {

@@ -1,6 +1,13 @@
+@font-face {
+    font-family: "TossFaceFontMac";
+    src: url("https://static.toss.im/assets/homepage/tossface/font/TossFaceFontMac.ttf")
+        format("truetype");
+    font-weight: 500;
+}
+
 * {
     box-sizing: border-box;
-    font-family: "NanumSquareRound", sans-serif;
+    font-family: "NanumSquareRound", "TossFaceFontMac", sans-serif;
 }
 
 body {
